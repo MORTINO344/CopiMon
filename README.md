@@ -1,5 +1,5 @@
 
-# Copilomon
+# CopiMon
 
 Videojuego de combate por turnos desarrollado en Python
 utilizando Pygame.
