@@ -1,6 +1,8 @@
 import random
 import pygame
-
+from pathlib import Path
+#? Ruta base del proyecto o ejecutable
+BASE_DIR = Path(__file__).resolve().parent
 #TODO ---------------------------------------------------------------------------- #
 #TODO                             DATOS DEL JUEGO                                #
 #TODO ---------------------------------------------------------------------------- #
@@ -32,7 +34,7 @@ movimientos_evasion = {"Axongor": 2, "Ruppira": 1, "Bryocut": 3}
 #TODO ---------------------------------------------------------------------------- #
 def cargar_imagen(ruta, tamano, transparente=True, suave=False):
     """Carga y escala una imagen una única vez."""
-    imagen = pygame.image.load(ruta)
+    imagen = pygame.image.load(str(BASE_DIR / ruta))
     imagen = imagen.convert_alpha() if transparente else imagen.convert()
     escala = pygame.transform.smoothscale if suave else pygame.transform.scale
     return escala(imagen, tamano)
